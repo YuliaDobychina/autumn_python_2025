@@ -5,13 +5,6 @@
 units_mass = 3
 mass = 12
 
-def conversion_to_kilograms(units_mass_):
-    match units_mass_:
-        case 1: units = 1
-        case 2: units = 0.000001
-        case 3: units = 0.001
-        case 4: units = 1000
-        case 5: units = 100
-    return units
+dict_unit_to_kilograms= {1:1, 2:0.000001, 3:0.001, 4:1000, 5:100}
 
-print('Масса данного тела в килограммах = ', mass*conversion_to_kilograms(units_mass))
+print('Масса данного тела в килограммах = ', mass*dict_unit_to_kilograms[units_mass])
