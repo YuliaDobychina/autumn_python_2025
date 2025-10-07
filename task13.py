@@ -4,22 +4,11 @@
 # змеи, лошади, овцы, обезьяны, курицы, собаки и свиньи. По номеру года вывести его название,
 # если 1984 год был началом цикла — годом зеленой крысы.
 
+DICT_ANIMAL = {0:'крысы',1:'коровы',2:'тигра',3:'зайца',4:'дракона',5:'змеи',
+               6:'лошади',7:'овцы',8:'обезьяны',9:'курицы',10:'собаки',11:'свиньи'}
+DICT_COLOR = {0:'зеленый',1:'красный',2:'желтый',3:'белый',4:'черный'}
+
 year = 2025
+print(f'{year} - это год ', DICT_ANIMAL[(year-1984)%12],'. Цвет: ' ,DICT_COLOR[(year-4)%10//2])
 
-def definition_animal(year_):
-    match (year_-1983)%12:
-        case 1: animal = 'крысы'
-        case 2: animal = 'коровы'
-        case 3: animal = 'тигра'
-        case 4: animal = 'зайца'
-        case 5: animal = 'дракона'
-        case 6: animal = 'змеи'
-        case 7: animal = 'лошади'
-        case 8: animal = 'овцы'
-        case 9: animal = 'обезьяны'
-        case 10: animal = 'курицы'
-        case 11: animal = 'собаки'
-        case 12: animal = 'свиньи'
-    return animal
-
-print(year,' - это год ', definition_animal(year))
+exit()
