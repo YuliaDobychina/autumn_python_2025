@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>TODO List</h1>
+    <form method="POST" action="/add">
+        <div class="actions">
+            <label>
+                <input type="text" name="task" placeholder="Add task">
+            </label>
+            <label>
+                <select name="priority">
+                    <option value="2">High</option>
+                    <option value="1">Medium</option>
+                    <option value="0">Low</option>
+                </select>
+            </label>
+            <label>
+                <input type="text" name="description" placeholder="Add description">
+            </label>
+            <label>
+                <input type="text" name="start_date" placeholder="Add start date">
+            </label>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+    <ul>
+        {% for task in tasks | sort(attribute='priority', reverse=True) | sort(attribute='complete')  %}
+            <li class="{{ 'high' if task.priority == 2 else 'medium' if task.priority == 1 else 'low' }} {{ 'complete' if task.complete == 1 }}">
+
+                {% if task.complete %}
+                    <strike>{{ task.task }}</strike>
+                {% else %}
+                    {{ task.task }}
+                {% endif %}
+
+                {% if task.complete %}
+                    <strike>| {{ task.description }}</strike>
+                {% else %}
+                    | {{ task.description }}
+                {% endif %}
+
+                {% if task.complete %}
+                    <strike>| {{ task.start_date }}</strike>
+                {% else %}
+                    | {{ task.start_date }}
+                {% endif %}
+
+                <div class="actions">
+                    <a href="/complete/{{ task.id }}" class="btn">Complete</a>
+                    <a href="/delete/{{ task.id }}" class="btn">Delete</a>
+                    <a href="/edit/{{ task.id }}" class="btn">Edit</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
