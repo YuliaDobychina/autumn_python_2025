@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> {{title}} </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href={{menu['main']['route']}}     class="nav-link">{{menu['main']['title']}}</a></li>
+                <li class="nav-item"><a href={{menu['about']['route']}}    class="nav-link">{{menu['about']['title']}}</a></li>
+                <li class="nav-item"><a href={{menu['contacts']['route']}} class="nav-link">{{menu['contacts']['title']}}</a></li>
+                <li class="nav-item"><a href={{menu['posts']['route']}}    class="nav-link">{{menu['posts']['title']}}</a></li>
+            </ul>
+        </header>
+
+        <body>
+        <h1>{{title}}  </h1>
+        </body>
+    </div>
+</html>
