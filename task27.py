@@ -7,7 +7,7 @@
 #8 5 12 12 15 , 0 23 15 18 12 4 !	hello, world!
 
 text  = input('Введите зашифрованный текст:')
-
+#text = '8 5 12 12 15 , 23 15 18 12 4 !'
 alf = 'abcdefghijklmnopqrstuvwxyz'
 text= list(text.split(' '))
 final = ''
