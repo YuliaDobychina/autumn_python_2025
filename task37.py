@@ -8,7 +8,11 @@ class Product:
     # Инициализация новой БД
     def __init__(self,name,price):
         self.__name = name
-        self.__price = price
+
+        if price > 0:
+            self.__price = price
+        else:
+            self.__price = 0
 
     @property
     def name(self):
@@ -34,8 +38,10 @@ class Product:
 # Пример использования
 product = Product("Book", 10)
 
+
 print(product.price)  # 10
 product.price = -5
 print(product.price)  # 0
+
 
 
